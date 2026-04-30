@@ -1,0 +1,55 @@
+{
+  "name": "signalk-app-dock-victron-bridge",
+  "version": "0.1.0",
+  "description": "Reverse-proxy bridge that exposes a Victron Cerbo GX / Venus OS Remote Console as a Signal K webapp, so it shows up in App Dock and works inside iframes without cross-origin / mixed-content / self-signed-cert headaches.",
+  "keywords": [
+    "signalk-node-server-plugin",
+    "signalk-webapp",
+    "signalk-category-instruments"
+  ],
+  "signalk": {
+    "displayName": "Victron Cerbo Bridge",
+    "appIcon": "./icon.svg"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "prettier": "prettier --write .",
+    "lint": "eslint --fix",
+    "format": "npm run prettier && npm run lint",
+    "ci-lint": "eslint && prettier --check .",
+    "test": "node --test 'dist/test/**/*.test.js'",
+    "build:all": "npm run build && npm test",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dirkwa/signalk-app-dock-victron-bridge"
+  },
+  "files": [
+    "dist",
+    "public",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "http-proxy-middleware": "^3.0.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@signalk/server-api": "latest",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.0.0",
+    "eslint": "^10.2.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.4.0",
+    "prettier": "^3.8.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.58.0"
+  }
+}

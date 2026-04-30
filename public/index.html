@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Victron Cerbo Bridge</title>
+    <script>
+      // App Dock discovers the bridge at /<pkg>/ via the signalk-webapp
+      // keyword, which serves this static directory. The proxy that
+      // forwards requests to the Cerbo lives under the plugin route at
+      // /plugins/<id>/ui/, because Signal K reserves /plugins/<id>/ and
+      // /plugins/<id>/config for its own metadata endpoints.
+      //
+      // The Cerbo's noVNC client builds its WebSocket URL from
+      // window.location.hostname plus default port 80/443 plus relative
+      // path "websockify" — none of which match where the proxy actually
+      // lives. We pass the correct host/port/path as query parameters so
+      // the noVNC client connects through our proxy at
+      //   ws://<sk-host>:<sk-port>/plugins/<id>/ui/websockify
+      // which our http-proxy-middleware (ws:true) forwards to the Cerbo.
+      var loc = window.location
+      var path = 'plugins/signalk-app-dock-victron-bridge/ui/websockify'
+      var qs =
+        '?host=' +
+        encodeURIComponent(loc.hostname) +
+        '&port=' +
+        encodeURIComponent(loc.port || (loc.protocol === 'https:' ? 443 : 80)) +
+        '&path=' +
+        encodeURIComponent(path)
+      window.location.replace('/plugins/signalk-app-dock-victron-bridge/ui/' + qs)
+    </script>
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=/plugins/signalk-app-dock-victron-bridge/ui/" />
+    </noscript>
+  </head>
+  <body>
+    <p>
+      Loading
+      <a href="/plugins/signalk-app-dock-victron-bridge/ui/">Victron Cerbo Remote Console</a>…
+    </p>
+  </body>
+</html>
