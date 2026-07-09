@@ -38,7 +38,7 @@
     "LICENSE"
   ],
   "dependencies": {
-    "http-proxy-middleware": "^3.0.5"
+    "http-proxy-middleware": "^4.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
