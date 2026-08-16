@@ -26,7 +26,7 @@
   "engines": {
     "node": ">=22"
   },
-  "license": "Apache-2.0",
+  "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
     "type": "git",
     "url": "https://github.com/dirkwa/signalk-app-dock-victron-bridge"
@@ -35,7 +35,9 @@
     "dist",
     "public",
     "README.md",
-    "LICENSE"
+    "LICENSE.md",
+    "LICENSE-Apache-2.0-through-v0.1.0.txt",
+    "CONTRIBUTING.md"
   ],
   "dependencies": {
     "http-proxy-middleware": "^3.0.5"
