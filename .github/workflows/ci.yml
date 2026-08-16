@@ -9,3 +9,6 @@ on:
 jobs:
   test:
     uses: SignalK/signalk-server/.github/workflows/plugin-ci.yml@master
+    with:
+      # armv7 (Cerbo GX) is not supported: the plugin requires Node >= 22.
+      enable-armv7: false
