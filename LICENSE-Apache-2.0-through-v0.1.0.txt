@@ -1,3 +1,8 @@
+This Apache-2.0 license applied to signalk-app-dock-victron-bridge as published
+in this repository up to and including commit 5b47bbf (version 0.1.0, never
+released to npm). That state remains available under Apache-2.0 in perpetuity.
+All later commits are licensed under the terms in LICENSE.md.
+
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
