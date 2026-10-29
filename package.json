@@ -40,7 +40,7 @@
     "CONTRIBUTING.md"
   ],
   "dependencies": {
-    "http-proxy-middleware": "^3.0.5"
+    "http-proxy-middleware": "^4.2.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
